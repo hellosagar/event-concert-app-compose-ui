@@ -36,19 +36,19 @@ fun CustomButton(
     }
 }
 
-val Header1 = TextStyle(
+val Heading1 = TextStyle(
     fontSize = 28.sp,
     color = Color.White,
     fontWeight = FontWeight.Bold
 )
 
-val Header2 = TextStyle(
+val Heading2 = TextStyle(
     fontSize = 18.sp,
     color = Color.White,
-    fontWeight = FontWeight.Bold
+    fontWeight = FontWeight.Medium
 )
 
-val Header3 = TextStyle(
+val Heading3 = TextStyle(
     fontSize = 16.sp,
     color = Color.White,
     fontWeight = FontWeight.Medium

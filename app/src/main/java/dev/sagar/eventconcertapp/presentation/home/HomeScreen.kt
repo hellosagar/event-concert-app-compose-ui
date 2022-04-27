@@ -1,6 +1,5 @@
 package dev.sagar.eventconcertapp.presentation.home
 
-import android.widget.Toast
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
@@ -9,6 +8,7 @@ import androidx.compose.foundation.lazy.LazyRow
 import androidx.compose.foundation.lazy.items
 import androidx.compose.foundation.lazy.itemsIndexed
 import androidx.compose.foundation.shape.CircleShape
+import androidx.compose.material.ExperimentalMaterialApi
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
@@ -17,7 +17,6 @@ import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
-import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
@@ -28,9 +27,12 @@ import com.ramcosta.composedestinations.navigation.DestinationsNavigator
 import dev.sagar.eventconcertapp.R
 import dev.sagar.eventconcertapp.data.local.listOfEvents
 import dev.sagar.eventconcertapp.data.local.listOfSpeakers
+import dev.sagar.eventconcertapp.presentation.destinations.DetailScreenDestination
+import dev.sagar.eventconcertapp.presentation.destinations.MyEventScreenDestination
 import dev.sagar.eventconcertapp.ui.theme.*
 
 
+@OptIn(ExperimentalMaterialApi::class)
 @RootNavGraph(start = true)
 @Destination()
 @Composable
@@ -41,7 +43,6 @@ fun HomeScreen(
     val painterCover = painterResource(id = R.drawable.ic_cover)
     val profilePainter = painterResource(id = R.drawable.ic_profile)
     val menuPainter = painterResource(id = R.drawable.ic_menu)
-    val context = LocalContext.current
 
     LazyColumn(
         modifier = Modifier
@@ -124,7 +125,7 @@ fun HomeScreen(
                         Text(
                             text = "Above & Beyond\n#ABGT500",
                             textAlign = TextAlign.Center,
-                            style = Header1
+                            style = Heading1
                         )
                     }
                 }
@@ -143,7 +144,9 @@ fun HomeScreen(
                 horizontalArrangement = Arrangement.SpaceEvenly,
             ) {
                 CustomButton(text = "Ver fechas", modifier = Modifier.weight(1f)) {
-                    Toast.makeText(context, "Hi 1", Toast.LENGTH_SHORT).show()
+                    navigator.navigate(
+                        direction = DetailScreenDestination
+                    )
                 }
 
                 Spacer(modifier = Modifier.width(16.dp))
@@ -153,7 +156,9 @@ fun HomeScreen(
                     modifier = Modifier.weight(1f),
                     backgroundColor = Black200
                 ) {
-                    Toast.makeText(context, "Hi 1", Toast.LENGTH_SHORT).show()
+                    navigator.navigate(
+                        direction = MyEventScreenDestination
+                    )
                 }
             }
 
@@ -168,7 +173,7 @@ fun HomeScreen(
                     .padding(start = 16.dp, end = 16.dp),
                 horizontalArrangement = Arrangement.SpaceBetween
             ) {
-                Text(text = "Eventos en tu ciudad", style = Header3)
+                Text(text = "Eventos en tu ciudad", style = Heading3)
 
                 Text(text = "Ver más", color = Purple200, fontSize = 14.sp)
             }
@@ -199,7 +204,7 @@ fun HomeScreen(
                 horizontalArrangement = Arrangement.SpaceBetween
             ) {
 
-                Text(text = "Eventos pasados", style = Header3)
+                Text(text = "Eventos pasados", style = Heading3)
 
                 Text(text = "Ver más", color = Purple200, fontSize = 14.sp)
 

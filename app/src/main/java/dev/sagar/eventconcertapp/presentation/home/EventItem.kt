@@ -18,13 +18,14 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.IntSize
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import com.ramcosta.composedestinations.navigation.DestinationsNavigator
 import dev.sagar.eventconcertapp.R
-import dev.sagar.eventconcertapp.data.local.Event
+import dev.sagar.eventconcertapp.data.local.LocalEvent
 import dev.sagar.eventconcertapp.ui.theme.Black500
 
 @Composable
 fun EventCardItem(
-    event: Event
+    localEvent: LocalEvent
 ) {
 
     var sizeImage by remember { mutableStateOf(IntSize.Zero) }
@@ -42,10 +43,9 @@ fun EventCardItem(
                     sizeImage = it.size
                 }
         ) {
-
             Image(
                 modifier = Modifier.fillMaxSize(),
-                painter = painterResource(id = event.drawable),
+                painter = painterResource(id = localEvent.drawable),
                 contentDescription = "Event Card",
                 contentScale = ContentScale.Crop
             )
@@ -72,12 +72,12 @@ fun EventCardItem(
             ) {
                 Column {
                     Text(
-                        text = event.title,
+                        text = localEvent.title,
                         color = Color.White,
                         fontWeight = FontWeight.Bold,
                         fontSize = 18.sp
                     )
-                    Text(text = event.date, color = Color.White, fontSize = 10.sp)
+                    Text(text = localEvent.date, color = Color.White, fontSize = 10.sp)
                 }
             }
 

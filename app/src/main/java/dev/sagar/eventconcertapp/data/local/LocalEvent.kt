@@ -2,49 +2,49 @@ package dev.sagar.eventconcertapp.data.local
 
 import dev.sagar.eventconcertapp.R
 
-data class Event(
+data class LocalEvent(
     val title:String,
     val date: String,
     val drawable: Int
 )
 
 val listOfEvents = listOf(
-    Event(
+    LocalEvent(
         title = "Amelie Lens",
         date = "21 septiembre, 2022",
         drawable = R.drawable.ic_event_one
     ),
-    Event(
+    LocalEvent(
         title = "Exit Festival",
         date = "27-29 octubre, 2022",
         drawable = R.drawable.ic_event_two
-    ), Event(
+    ), LocalEvent(
         title = "Carl Cox",
         date = "02 noviembre, 2022",
         drawable = R.drawable.ic_event_three
-    ), Event(
+    ), LocalEvent(
         title = "Amelie Lens",
         date = "21 septiembre, 2022",
         drawable = R.drawable.ic_event_one
     ),
-    Event(
+    LocalEvent(
         title = "Exit Festival",
         date = "27-29 octubre, 2022",
         drawable = R.drawable.ic_event_two
-    ), Event(
+    ), LocalEvent(
         title = "Carl Cox",
         date = "02 noviembre, 2022",
         drawable = R.drawable.ic_event_three
-    ), Event(
+    ), LocalEvent(
         title = "Amelie Lens",
         date = "21 septiembre, 2022",
         drawable = R.drawable.ic_event_one
     ),
-    Event(
+    LocalEvent(
         title = "Exit Festival",
         date = "27-29 octubre, 2022",
         drawable = R.drawable.ic_event_two
-    ), Event(
+    ), LocalEvent(
         title = "Carl Cox",
         date = "02 noviembre, 2022",
         drawable = R.drawable.ic_event_three
