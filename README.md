@@ -1,4 +1,4 @@
-# event-concert-app-compose-ui
+# Event Concert App UI
 Learning compose with this project contains my learning from different different commits
 
 
