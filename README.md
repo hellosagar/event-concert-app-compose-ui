@@ -6,6 +6,8 @@ Try latest Expenso app apk from below 👇
 
 [![EventConcertApp](https://img.shields.io/badge/EventConcertApp-APK-black.svg?style=for-the-badge&logo=android)](https://github.com/hellosagar/event-concert-app-compose-ui/releases/download/1.0/app-release.apk)
 
+## Preview
+![gif](https://github.com/hellosagar/event-concert-app-compose-ui/blob/master/Event%20App%20Compose.gif)
 
 
 ## UI Design 🎨
